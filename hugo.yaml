@@ -1,0 +1,52 @@
+baseURL: https://toha.ehlo
+title: "EHLO, John's Blog"
+
+module:
+  imports:
+  - path: github.com/hugo-toha/toha/v4
+  mounts:
+  - source: static/files
+    target: static/files
+  - source: ./node_modules/flag-icons/flags
+    target: static/flags
+  - source: ./node_modules/@fontsource/mulish/files
+    target: static/files
+  - source: ./node_modules/katex/dist/fonts
+    target: static/fonts
+  - source: static/images
+    target: static/images
+
+languageCode: pt-br
+defaultContentLanguage: pt-br
+
+languages:
+  pt-br:
+    languageName: Português
+    weight: 1
+  en:
+    languageName: English
+    weight: 2
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  hero: "/images/ehlo-default-hero.jpg"
+  features:
+    theme:
+      enable: true
+    blog:
+      enable: true
+      showAuthor: true
+
+    flags:
+      enable: true
+      flagOverwrites:
+        - languageCode: pt-br
+          countryCode: br
+
+  footer:
+    enable: false
+
