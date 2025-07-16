@@ -1,0 +1,49 @@
+{{/**
+  file: get-hero.html 
+  path: layouts/_partials/helpers/get-hero.html */}}
+
+{{/* get the hero from front-matter  */}}
+{{ $heroImage := .Params.hero }}
+
+{{/* get the directory default "hero" image  */}}
+{{ if not $heroImage}}
+  {{ $heroDirImage := path.Join (path.Dir .Path) "hero." }}
+  {{ if fileExists (print $heroDirImage "svg") }}
+    {{ $heroImage = print $heroDirImage "svg" }}
+  {{ end }}
+  {{ if fileExists (print $heroDirImage "jpg") }}
+    {{ $heroImage = print $heroDirImage "jpg" }}
+  {{ end }}
+  {{ if fileExists (print $heroDirImage "png") }}
+    {{ $heroImage = print $heroDirImage "png" }}
+  {{ end }}
+{{ end}}
+
+{{/* get the directory default "default-hero" image  */}}
+{{ if not $heroImage}}
+  {{ $heroDirImage := path.Join (path.Dir .Path) "default-hero." }}
+  {{ if fileExists (print $heroDirImage "svg") }}
+    {{ $heroImage = print $heroDirImage "svg" }}
+  {{ end }}
+  {{ if fileExists (print $heroDirImage "jpg") }}
+    {{ $heroImage = print $heroDirImage "jpg" }}
+  {{ end }}
+  {{ if fileExists (print $heroDirImage "png") }}
+    {{ $heroImage = print $heroDirImage "png" }}
+  {{ end }}
+{{ end}}
+
+{{/* return the hero from site setup */}}
+{{ if not $heroImage}}
+  {{  $heroImage = .Site.Params.hero }}
+{{ end}}
+
+{{/* if hero image is not provided, then use the default hero image */}}
+{{ if not $heroImage }}
+  {{ $heroImage := resources.Get "images/default-hero.jpg"}}
+{{ end }}
+
+{{ if fileExists $heroImage }}
+  {{ return $heroImage }}
+{{ end }}
+
