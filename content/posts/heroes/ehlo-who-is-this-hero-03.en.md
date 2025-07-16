@@ -7,7 +7,7 @@ description: >
 categories:
   - "Brasilian Heroes"
 
-hero: "coding-hero.svg"
+hero: /posts/heroes/coding-hero.svg
 ---
 
 ## Ehlo Who Is This Hero 03

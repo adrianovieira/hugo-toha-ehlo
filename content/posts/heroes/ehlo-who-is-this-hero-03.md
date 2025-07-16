@@ -7,7 +7,7 @@ description: >
 categories:
   - "Heróis brasileiros"
 
-hero: "coding-hero.svg"
+hero: /posts/heroes/coding-hero.svg
 ---
 
 ## Ehlo Who Is This Hero 03

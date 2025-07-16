@@ -6,6 +6,7 @@ description: >
   Ehlo Who Is This Hero 01
 categories:
   - "Heróis brasileiros"
+hero: /posts/heroes/mg-cultural.jpg
 ---
 
 ## Ehlo Who Is This Hero 01
