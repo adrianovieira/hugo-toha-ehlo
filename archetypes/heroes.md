@@ -9,7 +9,7 @@ categories:
 {{/* playing with templates */}}
 {{- $heroes := slice nil "mg-cultural.jpg" "analytics-hero.jpg" "coding-hero.svg" "winner-hero.jpg" nil nil }}
 {{- with index $heroes (int (math.Floor (math.Rand | mul 5)))}}
-hero: "{{ . }}"
+hero: "/images/heroes/{{ . }}"
 {{- end}}
 ---
 
