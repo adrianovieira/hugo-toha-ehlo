@@ -10,11 +10,9 @@
   {{ $heroDirImage := path.Join (path.Dir .Path) "hero." }}
   {{ if fileExists (print $heroDirImage "svg") }}
     {{ $heroImage = print $heroDirImage "svg" }}
-  {{ end }}
-  {{ if fileExists (print $heroDirImage "jpg") }}
+  {{ else if fileExists (print $heroDirImage "jpg") }}
     {{ $heroImage = print $heroDirImage "jpg" }}
-  {{ end }}
-  {{ if fileExists (print $heroDirImage "png") }}
+  {{ else if fileExists (print $heroDirImage "png") }}
     {{ $heroImage = print $heroDirImage "png" }}
   {{ end }}
 {{ end}}
@@ -24,11 +22,9 @@
   {{ $heroDirImage := path.Join (path.Dir .Path) "default-hero." }}
   {{ if fileExists (print $heroDirImage "svg") }}
     {{ $heroImage = print $heroDirImage "svg" }}
-  {{ end }}
-  {{ if fileExists (print $heroDirImage "jpg") }}
+  {{ else if fileExists (print $heroDirImage "jpg") }}
     {{ $heroImage = print $heroDirImage "jpg" }}
-  {{ end }}
-  {{ if fileExists (print $heroDirImage "png") }}
+  {{ else if fileExists (print $heroDirImage "png") }}
     {{ $heroImage = print $heroDirImage "png" }}
   {{ end }}
 {{ end}}
